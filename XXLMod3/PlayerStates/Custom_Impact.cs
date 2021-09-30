@@ -345,10 +345,10 @@ namespace XXLMod3.PlayerStates
             }
             if (!PlayerController.Instance.boardController.AllDown)
             {
-                if (Physics.Raycast(PlayerController.Instance.skaterController.skaterTransform.position, -Vector3.up, out _hit, 1.1f, PlayerController.Instance.boardController._layers))
-                {
+                // if (Physics.Raycast(PlayerController.Instance.skaterController.skaterTransform.position, -Vector3.up, out _hit, 1.1f, PlayerController.Instance.boardController._layers))
+                // {
                     PlayerController.Instance.ApplyWeightOnBoard();
-                }
+                // }
                 PlayerController.Instance.SnapRotation(PlayerController.Instance.boardController.currentRotationTarget);
             }
             if (PlayerController.Instance.boardController.boardRigidbody.velocity.y > 0f && !PlayerController.Instance.boardController.AllDown)

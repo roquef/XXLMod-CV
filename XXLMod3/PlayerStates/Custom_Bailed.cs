@@ -124,16 +124,16 @@ namespace XXLMod3.PlayerStates
             }
             PlayerController.Instance.LerpKneeIkWeight();
             UpdateBailAnimInfo();
-            if (Physics.RaycastNonAlloc(_hips.position, -Vector3.up, _rayCasts, 1f, PlayerController.Instance.boardController._layers) > 0)
-            {
-                _fallTarget = 0f;
-                PlayerController.Instance.respawn.puppetMaster.pinWeight = 0.01f;
-                PlayerController.Instance.respawn.puppetMaster.muscleWeight = 0.1f;
-            }
-            else
-            {
-                _fallTarget = 1f;
-            }
+            // if (Physics.RaycastNonAlloc(_hips.position, -Vector3.up, _rayCasts, 1f, PlayerController.Instance.boardController._layers) > 0)
+            // {
+            // _fallTarget = 0f;
+            // PlayerController.Instance.respawn.puppetMaster.pinWeight = 0.01f;
+            // PlayerController.Instance.respawn.puppetMaster.muscleWeight = 0.1f;
+            // }
+            // else
+            // {
+            _fallTarget = 1f;
+            // }
             _fallBlend = Mathf.Lerp(_fallBlend, _fallTarget, Time.fixedDeltaTime * 10f);
             PlayerController.Instance.animationController.SetValue("FallBlend", _fallBlend);
         }
