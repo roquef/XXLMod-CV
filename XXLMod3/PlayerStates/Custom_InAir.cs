@@ -919,24 +919,26 @@ namespace XXLMod3.PlayerStates
                     if (isHippieJumping == false)
                     {
                         //RightLegIK
-                        PlayerController.Instance.SetRightIKLerpTarget(1f, 1f);
+                        PlayerController.Instance.SetRightIKLerpTarget(Main.settings.HippieForce, Main.settings.HippieForce);
                         PlayerController.Instance.SetRightSteezeWeight(0f);
                         PlayerController.Instance.SetMaxSteezeRight(0f);
-                        PlayerController.Instance.SetRightKneeIKTargetWeight(1f);
-                        PlayerController.Instance.SetRightIKWeight(1f);
-                        PlayerController.Instance.SetRightKneeBendWeight(1f);
-                        PlayerController.Instance.SetRightKneeBendWeightManually(1f);
+                        PlayerController.Instance.SetRightKneeIKTargetWeight(Main.settings.HippieForce);
+                        PlayerController.Instance.SetRightIKWeight(Main.settings.HippieForce);
+                        PlayerController.Instance.SetRightKneeBendWeight(Main.settings.HippieForce);
+                        PlayerController.Instance.SetRightKneeBendWeightManually(Main.settings.HippieForce);
                         //LeftLegIK
-                        PlayerController.Instance.SetLeftIKLerpTarget(1f, 1f);
+                        PlayerController.Instance.SetLeftIKLerpTarget(Main.settings.HippieForce, Main.settings.HippieForce);
                         PlayerController.Instance.SetLeftSteezeWeight(0f);
                         PlayerController.Instance.SetMaxSteezeLeft(0f);
-                        PlayerController.Instance.SetLeftKneeIKTargetWeight(1f);
-                        PlayerController.Instance.SetLeftIKWeight(1f);
-                        PlayerController.Instance.SetLeftKneeBendWeight(1f);
-                        PlayerController.Instance.SetLeftKneeBendWeightManually(1f);
+                        PlayerController.Instance.SetLeftKneeIKTargetWeight(Main.settings.HippieForce);
+                        PlayerController.Instance.SetLeftIKWeight(Main.settings.HippieForce);
+                        PlayerController.Instance.SetLeftKneeBendWeight(Main.settings.HippieForce);
+                        PlayerController.Instance.SetLeftKneeBendWeightManually(Main.settings.HippieForce);
                         PlayerController.Instance.animationController.skaterAnim.SetBool("Released", true);
-                        PlayerController.Instance.CrossFadeAnimation("Extend", 0.3f);
+                        PlayerController.Instance.CrossFadeAnimation("Extend", Main.settings.HippieTime);
                         isHippieJumping = true;
+
+                        PlayerController.Instance.boardController.boardRigidbody.AddForce(new Vector3(0, 1, 0) * Main.settings.Gravity * (Main.settings.HippieForce / 4), ForceMode.Impulse);
                     }
                 }
                 else

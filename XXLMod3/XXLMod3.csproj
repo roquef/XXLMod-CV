@@ -307,14 +307,14 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if "$(ConfigurationName)"=="Debug" (
-copy /Y "$(TargetDir)XXLMod3.dll" "C:\Program Files (x86)\Steam\steamapps\common\Skater XL\Mods\XXLMod3\XXLMod3.dll"
-copy /Y "$(ProjectDir)Info.json" "C:\Program Files (x86)\Steam\steamapps\common\Skater XL\Mods\XXLMod3\Info.json"
+copy /Y "$(TargetDir)XXLMod3.dll" "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod3\XXLMod3.dll"
+copy /Y "$(ProjectDir)Info.json" "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod3\Info.json"
 )
 
 if "$(ConfigurationName)"=="Release" (
-del /Q /F "C:\Program Files (x86)\Steam\steamapps\common\Skater XL\Mods\XXLMod3\"
-copy /Y "$(TargetDir)XXLMod3.dll" "C:\Program Files (x86)\Steam\steamapps\common\Skater XL\Mods\XXLMod3\XXLMod3.dll"
-copy /Y "$(ProjectDir)Info.json" "C:\Program Files (x86)\Steam\steamapps\common\Skater XL\Mods\XXLMod3\Info.json"
+del /Q /F "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod3\"
+copy /Y "$(TargetDir)XXLMod3.dll" "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod3\XXLMod3.dll"
+copy /Y "$(ProjectDir)Info.json" "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod3\Info.json"
 )</PostBuildEvent>
   </PropertyGroup>
 </Project>

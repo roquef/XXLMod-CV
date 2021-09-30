@@ -39,6 +39,7 @@ namespace XXLMod3.PlayerStates
             PlayerController.Instance.currentStateEnum = PlayerController.CurrentState.Bailed;
             XXLController.CurrentState = CurrentState.Bailed;
             XXLController.Instance.FlipDetected = false;
+
             if (Main.settings.BailRespawnAt)
             {
                 Utils.InvokeMethod(PlayerController.Instance.respawn, "SetSpawnPos");
@@ -47,14 +48,18 @@ namespace XXLMod3.PlayerStates
             {
                 XXLController.Instance.SetMuscleWeight();
             }
+
             PlayerController.Instance.respawn.puppetMaster.DisableTeleport();
             _hips = PlayerController.Instance.respawn.puppetMaster.muscles[0].rigidbody;
+
             EventManager.Instance.OnBail();
             PlayerController.Instance.respawn.puppetMaster.Kill();
             PlayerController.Instance.ToggleFlipColliders(false);
+
             GroundLogic();
             PlayerController.Instance.SetBoardPhysicsMaterial(PlayerController.FrictionType.Bail);
             PlayerController.Instance.RagdollLayerChange(true);
+
             _fallTarget = 1f;
             _fallBlend = 1f;
             PlayerController.Instance.animationController.SetValue("FallBlend", _fallBlend);
@@ -63,10 +68,11 @@ namespace XXLMod3.PlayerStates
             PlayerController.Instance.SetKneeIKTargetWeight(0f);
             PlayerController.Instance.DoBailDelay();
             PlayerController.Instance.skaterController.skaterRigidbody.useGravity = true;
-            _hips.velocity = PlayerController.Instance.skaterController.skaterRigidbody.velocity;
+            _hips.velocity = new Vector3(0f, 0f, 0f);
             PlayerController.Instance.respawn.behaviourPuppet.defaults.minMappingWeight = 1f;
             PlayerController.Instance.respawn.behaviourPuppet.masterProps.normalMode = BehaviourPuppet.NormalMode.Active;
             InitializeBailAnimInfo();
+
             XXLController.Instance.ActivateSlowMotion(Main.settings.SlowMotionBails, Main.settings.SlowMotionBailSpeed);
         }
 
@@ -134,7 +140,7 @@ namespace XXLMod3.PlayerStates
             // {
             _fallTarget = 1f;
             // }
-            _fallBlend = Mathf.Lerp(_fallBlend, _fallTarget, Time.fixedDeltaTime * 10f);
+            _fallBlend = Mathf.Lerp(_fallBlend, _fallTarget, Time.fixedDeltaTime * Main.settings.Gravity);
             PlayerController.Instance.animationController.SetValue("FallBlend", _fallBlend);
         }
 
@@ -202,7 +208,7 @@ namespace XXLMod3.PlayerStates
                     PlayerController.Instance.SetBoardPhysicsMaterial(PlayerController.FrictionType.Default);
                 }
                 Vector3 vector = PlayerController.Instance.boardController.boardTransform.InverseTransformDirection(PlayerController.Instance.boardController.boardRigidbody.angularVelocity);
-                vector.y = Mathf.Lerp(vector.y, 0f, Time.deltaTime * 5f);
+                vector.y = Mathf.Lerp(vector.y, 0f, Time.deltaTime * (Main.settings.Gravity * -1f));
                 PlayerController.Instance.boardController.boardRigidbody.angularVelocity = PlayerController.Instance.boardController.boardTransform.TransformDirection(vector);
                 PlayerController.Instance.ApplyFriction();
                 SoundManager.Instance.SetRollingVolumeFromRPS(PlayerController.Instance.GetSurfaceTag(PlayerController.Instance.boardController.GetSurfaceTagString()), PlayerController.Instance.boardController.boardRigidbody.velocity.magnitude);

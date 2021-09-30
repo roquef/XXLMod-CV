@@ -56,6 +56,8 @@ namespace XXLMod3.Windows
             {
                 Main.settings.HippieOllie = !Main.settings.HippieOllie;
             }
+            Main.settings.HippieForce = RGUI.SliderFloat(Main.settings.HippieForce, 1f, 100f, 1f, "Hippie Jump Force");
+            Main.settings.HippieTime = RGUI.SliderFloat(Main.settings.HippieTime, 0f, 10f, 0.3f, "Hippie Jump Animation Time");
             GUILayout.EndVertical();
 
             GUILayout.BeginVertical("Box");

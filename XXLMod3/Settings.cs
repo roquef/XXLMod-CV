@@ -16,7 +16,7 @@ namespace XXLMod3
         public Color BGColor = new Color(0f,0f,0f);
 
         #region GeneralSettings
-        public float Gravity = -9.807f;
+        public float Gravity = -13f;
         public AdvancedPop AdvancedPop = AdvancedPop.Off;
         public float ForwardPopForce = 100f;
         public float SidewayPopForce = 100f;
@@ -26,16 +26,16 @@ namespace XXLMod3
         public float SwitchPopForce = 3f;
         public float FakiePopForce = 3f;
         public float HighPopForceMult = 0.5f;
-        public bool BabyPop = false;
+        public bool BabyPop = true;
         public float BabyPopForceMult = 0.6f;
         public float InAirTurnSpeed = 1f;
         public float MaxAngularVelocity = 7f;
-        public bool PopDelay = true;
+        public bool PopDelay = false;
         public float PumpForceMult = 1.0f;
         public float FirstPushForce = 0.5f;
         public float PushForce = 8f;
         public float RevertSpeed = 1f;
-        public float TopSpeed = 8f;
+        public float TopSpeed = 9f;
         public DecoupledMode DecoupledMode = DecoupledMode.Off;
         #endregion
 
@@ -187,7 +187,9 @@ namespace XXLMod3
         public bool LockTurningWhileWindUp = false;
         public float PowerslideCrouchAmount = 0.94196f;
         public float PushCrouchAmount = 1.04196f;
-        public bool RandomImpactAnimations = false;
+        public float HippieForce = 1f;
+        public float HippieTime = 0.3f;
+        public bool RandomImpactAnimations = true;
         public bool ReducedStickTurning = false;
         public bool ShuvMidFlip = true;
         #endregion

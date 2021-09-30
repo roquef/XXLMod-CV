@@ -21,8 +21,8 @@ namespace XXLMod3.Controller
 
         private void Start()
         {
-            MainMenuRect = new Rect(20f, Screen.currentResolution.height / 2 - 370.5f, 100f, 200f);
-            TabMenuRect = new Rect(200f, Screen.currentResolution.height / 2 - 370.5f, 100f, 200f);
+            MainMenuRect = new Rect(24f, 24f, 100f, 200f);
+            TabMenuRect = new Rect(124f, 24f, 100f, 200f);
         }
 
         private void Update()
@@ -98,52 +98,52 @@ namespace XXLMod3.Controller
                 switch (MenuTab)
                 {
                     case MenuTab.General:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position,new Vector2(444f, 664f)), GeneralSettings.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position,new Vector2(444f, 664f)), GeneralSettings.Window, "<b>General settings</b>");
                         break;
                     case MenuTab.Catch:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 271f)), CatchUI.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 271f)), CatchUI.Window, "<b>Catch settings</b>");
                         break;
                     case MenuTab.Flips:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 398f)), FlipSettings.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 398f)), FlipSettings.Window, "<b>Flips settings</b>");
                         break;
                     case MenuTab.Lateflips:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 294f)), LateFlipSettings.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 294f)), LateFlipSettings.Window, "<b>Late flips settings</b>");
                         break;
                     case MenuTab.Grabs:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 266f)), GrabSettings.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 266f)), GrabSettings.Window, "<b>Grabs settings</b>");
                         break;
                     case MenuTab.Fingerflips:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 50f)), FingerFlipSettings.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 50f)), FingerFlipSettings.Window, "<b>Finger flips settings</b>");
                         break;
                     case MenuTab.Footplants:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 217f)), FootplantSettings.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 217f)), FootplantSettings.Window, "<b>Footplants settings</b>");
                         break;
                     case MenuTab.Grinds:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(495f, 695f)), GrindSettings.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(495f, 695f)), GrindSettings.Window, "<b>Grinds settings</b>");
                         break;
                     case MenuTab.Manuals:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 398f)), ManualSettings.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 398f)), ManualSettings.Window, "<b>Manuals settings</b>");
                         break;
                     case MenuTab.Powerslide:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 278f)), PowerslideUI.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 278f)), PowerslideUI.Window, "<b>Powerslides settings</b>");
                         break;
                     case MenuTab.Primos:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 381f)), PrimoUI.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 381f)), PrimoUI.Window, "<b>Primos settings</b>");
                         break;
                     case MenuTab.Misc:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 438f)), MiscSettings.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 512f)), MiscSettings.Window, "<b>Misc settings</b>");
                         break;
                     case MenuTab.Bail:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 336f)), BailUI.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 336f)), BailUI.Window, "<b>Bail settings</b>");
                         break;
                     case MenuTab.Other:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 659f)), OtherUI.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 659f)), OtherUI.Window, "<b>Other settings</b>");
                         break;
                     case MenuTab.Fixes:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(614f, 225f)), FixUI.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(614f, 225f)), FixUI.Window, "<b>Fixes settings</b>");
                         break;
                     case MenuTab.LegCustomizer:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 375f)), LegCustomizer.Window, "<b>XXLMOD3</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 375f)), LegCustomizer.Window, "<b>Leg customizer</b>");
                         break;
                 }
             }
@@ -198,21 +198,6 @@ namespace XXLMod3.Controller
                 MenuTab = (MenuTab == MenuTab.Flips) ? MenuTab.Off : MenuTab.Flips;
             }
 
-            if (GUILayout.Button("<b>LATEFLIPS</b>", GUILayout.Height(21f)))
-            {
-                MenuTab = (MenuTab == MenuTab.Lateflips) ? MenuTab.Off : MenuTab.Lateflips;
-            }
-
-            if (GUILayout.Button("<b>GRABS</b>", GUILayout.Height(21f)))
-            {
-                MenuTab = (MenuTab == MenuTab.Grabs) ? MenuTab.Off : MenuTab.Grabs;
-            }
-
-            if (GUILayout.Button("<b>FOOTPLANTS</b>", GUILayout.Height(21f)))
-            {
-                MenuTab = (MenuTab == MenuTab.Footplants) ? MenuTab.Off : MenuTab.Footplants;
-            }
-
             if (GUILayout.Button("<b>GRINDS</b>", GUILayout.Height(21f)))
             {
                 MenuTab = (MenuTab == MenuTab.Grinds) ? MenuTab.Off : MenuTab.Grinds;
@@ -223,24 +208,39 @@ namespace XXLMod3.Controller
                 MenuTab = (MenuTab == MenuTab.Manuals) ? MenuTab.Off : MenuTab.Manuals;
             }
 
+            if (GUILayout.Button("<b>GRABS</b>", GUILayout.Height(21f)))
+            {
+                MenuTab = (MenuTab == MenuTab.Grabs) ? MenuTab.Off : MenuTab.Grabs;
+            }
+
             if (GUILayout.Button("<b>POWERSLIDES</b>", GUILayout.Height(21f)))
             {
                 MenuTab = (MenuTab == MenuTab.Powerslide) ? MenuTab.Off : MenuTab.Powerslide;
             }
+
+            if (GUILayout.Button("<b>LATEFLIPS</b>", GUILayout.Height(21f)))
+            {
+                MenuTab = (MenuTab == MenuTab.Lateflips) ? MenuTab.Off : MenuTab.Lateflips;
+            }            
+
+            if (GUILayout.Button("<b>FOOTPLANTS</b>", GUILayout.Height(21f)))
+            {
+                MenuTab = (MenuTab == MenuTab.Footplants) ? MenuTab.Off : MenuTab.Footplants;
+            }            
 
             if (GUILayout.Button("<b>PRIMO</b>", GUILayout.Height(21f)))
             {
                 MenuTab = (MenuTab == MenuTab.Primos) ? MenuTab.Off : MenuTab.Primos;
             }
 
-            if (GUILayout.Button("<b>MISC</b>", GUILayout.Height(21f)))
-            {
-                MenuTab = (MenuTab == MenuTab.Misc) ? MenuTab.Off : MenuTab.Misc;
-            }
-
             if (GUILayout.Button("<b>BAILS</b>", GUILayout.Height(21f)))
             {
                 MenuTab = (MenuTab == MenuTab.Bail) ? MenuTab.Off : MenuTab.Bail;
+            }
+
+            if (GUILayout.Button("<b>MISC</b>", GUILayout.Height(21f)))
+            {
+                MenuTab = (MenuTab == MenuTab.Misc) ? MenuTab.Off : MenuTab.Misc;
             }
 
             if (GUILayout.Button("<b>OTHER</b>", GUILayout.Height(21f)))
@@ -253,7 +253,7 @@ namespace XXLMod3.Controller
                 MenuTab = (MenuTab == MenuTab.Fixes) ? MenuTab.Off : MenuTab.Fixes;
             }
 
-            if (GUILayout.Button("<b>LEGCUSTOMIZER</b>", GUILayout.Height(21f)))
+            if (GUILayout.Button("<b>LEG CUSTOMIZER</b>", GUILayout.Height(21f)))
             {
                 MenuTab = (MenuTab == MenuTab.LegCustomizer) ? MenuTab.Off : MenuTab.LegCustomizer;
             }
