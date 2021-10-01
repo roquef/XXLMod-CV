@@ -4,10 +4,10 @@ using SkaterXL.Core;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using XXLMod3.Controller;
-using XXLMod3.Core;
+using XXLModCV.Controller;
+using XXLModCV.Core;
 
-namespace XXLMod3.PlayerStates
+namespace XXLModCV.PlayerStates
 {
     public class Custom_InAir : PlayerState_OnBoard
     {
@@ -196,6 +196,7 @@ namespace XXLMod3.PlayerStates
         {
             HandleBoardControllerUpVector(); //////////////
             HandleHippieOllie();
+            HandleKickSkate();
             _timeInState += Time.deltaTime;
             if (_canEnterCoping && _timeInState > 0.2f)
             {
@@ -949,6 +950,17 @@ namespace XXLMod3.PlayerStates
                         isHippieJumping = false;
                     }
                 }
+            }
+        }
+
+        private void HandleKickSkate()
+        {
+            if(Main.settings.KickSkate && PlayerController.Instance.inputController.player.GetButton("B"))
+            {
+                PlayerController.Instance.AnimRelease(false);
+                PlayerController.Instance.animationController.skaterAnim.SetBool("Released", true);
+                Vector3 result = new Vector3(PlayerController.Instance.boardController.transform.right.x, 1, PlayerController.Instance.boardController.transform.right.z);
+                PlayerController.Instance.boardController.boardRigidbody.AddForce(result * Main.settings.Gravity * (Main.settings.HippieForce / 2), ForceMode.Impulse);
             }
         }
     }

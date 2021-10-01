@@ -1,4 +1,4 @@
-﻿namespace XXLMod3.Core
+﻿namespace XXLModCV.Core
 {
     public enum GrabOffBoardStanceTab
     {

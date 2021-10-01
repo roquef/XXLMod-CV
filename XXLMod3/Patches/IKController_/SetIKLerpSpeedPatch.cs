@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using System;
 
-namespace XXLMod3.Patches.IKController_
+namespace XXLModCV.Patches.IKController_
 {
     [HarmonyPatch(typeof(IKController), "SetIKLerpSpeed", new Type[] { typeof(float) })]
     class SetIKLerpSpeedPatch

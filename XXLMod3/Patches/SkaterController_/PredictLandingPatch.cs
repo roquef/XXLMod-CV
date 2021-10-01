@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using UnityEngine;
 
-namespace XXLMod3.Patches.SkaterController_
+namespace XXLModCV.Patches.SkaterController_
 {
     [HarmonyPatch(typeof(SkaterController), "PredictLanding")]
     class PredictLandingPatch

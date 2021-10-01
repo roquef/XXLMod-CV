@@ -2,7 +2,7 @@
 using System.Reflection;
 using UnityEngine;
 
-namespace XXLMod3
+namespace XXLModCV
 {
     public static class AssetBundleHelper
     {
@@ -10,7 +10,7 @@ namespace XXLMod3
 
         public static void LoadUIBundle()
         {
-            var assetBundle = AssetBundle.LoadFromMemory(ExtractResources("XXLMod3.Resources.stances"));
+            var assetBundle = AssetBundle.LoadFromMemory(ExtractResources("XXLModCV.Resources.stances"));
             SphereIndicatorPrefab = assetBundle.LoadAsset<GameObject>("Assets/Mods/Stances/Indicator.prefab");
             assetBundle.Unload(false);
         }

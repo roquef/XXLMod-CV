@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace XXLMod3.Core
+namespace XXLModCV.Core
 {
     public static class Utils
     {

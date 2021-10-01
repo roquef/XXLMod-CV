@@ -4,7 +4,7 @@ using SkaterXL.Data;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace XXLMod3
+namespace XXLModCV
 {
     public class RecordedFrame
     {

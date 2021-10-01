@@ -2,9 +2,9 @@
 using System.Linq;
 using UnityEngine;
 using UnityModManagerNet;
-using XXLMod3.PlayerStates;
+using XXLModCV.PlayerStates;
 
-namespace XXLMod3.Patches.SkaterController_
+namespace XXLModCV.Patches.SkaterController_
 {
     [HarmonyPatch(typeof(SkaterController), "Update")]
     class UpdatePatch

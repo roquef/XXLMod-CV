@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using System;
 
-namespace XXLMod3.Patches.PlayerController_
+namespace XXLModCV.Patches.PlayerController_
 {
     [HarmonyPatch(typeof(PlayerController), "PowerslideRotation", new Type[] { typeof(float) })]
     class PowerslideRotationPatch

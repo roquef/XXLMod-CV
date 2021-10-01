@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using FSMHelper;
 using RootMotion.Dynamics;
 using UnityEngine;
-using XXLMod3.Controller;
-using XXLMod3.Core;
+using XXLModCV.Controller;
+using XXLModCV.Core;
 
-namespace XXLMod3.PlayerStates
+namespace XXLModCV.PlayerStates
 {
     public class Custom_Bailed : PlayerState_OffBoard
     {
@@ -68,7 +68,6 @@ namespace XXLMod3.PlayerStates
             PlayerController.Instance.SetKneeIKTargetWeight(0f);
             PlayerController.Instance.DoBailDelay();
             PlayerController.Instance.skaterController.skaterRigidbody.useGravity = true;
-            _hips.velocity = new Vector3(0f, 0f, 0f);
             PlayerController.Instance.respawn.behaviourPuppet.defaults.minMappingWeight = 1f;
             PlayerController.Instance.respawn.behaviourPuppet.masterProps.normalMode = BehaviourPuppet.NormalMode.Active;
             InitializeBailAnimInfo();

@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace XXLMod3.Patches.PlayerController_
+namespace XXLModCV.Patches.PlayerController_
 {
     [HarmonyPatch(typeof(PlayerController), "SnapRotation", new Type[] { typeof(Quaternion) })]
     class SnapRotationPatch

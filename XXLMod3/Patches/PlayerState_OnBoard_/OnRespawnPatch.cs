@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
-using XXLMod3.PlayerStates;
+using XXLModCV.PlayerStates;
 
-namespace XXLMod3.Patches.PlayerState_OnBoard_
+namespace XXLModCV.Patches.PlayerState_OnBoard_
 {
     [HarmonyPatch(typeof(PlayerState_OnBoard), "OnRespawn")]
     class OnRespawnPatch
@@ -15,7 +15,7 @@ namespace XXLMod3.Patches.PlayerState_OnBoard_
                 PlayerController.Instance.AnimGrindTransition(false);
                 PlayerController.Instance.AnimOllieTransition(false);
                 PlayerController.Instance.AnimSetupTransition(false);
-                __instance.DoTransition(typeof(XXLMod3.PlayerStates.Custom_Riding), null);
+                __instance.DoTransition(typeof(XXLModCV.PlayerStates.Custom_Riding), null);
                 return false;
             }
             return true;

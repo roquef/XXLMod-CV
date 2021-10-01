@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace XXLMod3.Core
+namespace XXLModCV.Core
 {
     [Serializable]
     public class CustomGrindSettings : BaseGrindSettings

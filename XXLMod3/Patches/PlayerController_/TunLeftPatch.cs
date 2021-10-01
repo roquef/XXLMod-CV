@@ -2,7 +2,7 @@
 //using HarmonyLib;
 //using SkaterXL.Core;
 
-//namespace XXLMod3.Patches.PlayerController_
+//namespace XXLModCV.Patches.PlayerController_
 //{
 //    [HarmonyPatch(typeof(PlayerController), "TurnLeft", new Type[] { typeof(float), typeof(InputController.TurningMode) })]
 //    class TurnLeftPatch

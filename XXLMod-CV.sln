@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1000
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXLMod3", "XXLMod3\XXLMod3.csproj", "{7DEB54F3-A9F2-4B91-9CE3-9DE7040E1A28}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XXLMod-CV", "XXLMod3\XXLMod-CV.csproj", "{7DEB54F3-A9F2-4B91-9CE3-9DE7040E1A28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

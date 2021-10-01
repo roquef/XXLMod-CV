@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace XXLMod3.Patches.InputController_
+namespace XXLModCV.Patches.InputController_
 {
     [HarmonyPatch(typeof(InputController), "IsTurningWithSticks")]
     class IsTurningWithSticksPatch

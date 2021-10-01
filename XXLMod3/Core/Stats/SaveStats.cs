@@ -3,7 +3,7 @@ using System.IO;
 using System.Xml.Serialization;
 using System;
 
-namespace XXLMod3.Core
+namespace XXLModCV.Core
 {
     public class SaveStats : UnityModManagerNet.UnityModManager.ModSettings
     {

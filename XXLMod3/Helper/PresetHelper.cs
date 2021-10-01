@@ -2,11 +2,11 @@
 using System.IO;
 using System.Linq;
 
-namespace XXLMod3
+namespace XXLModCV
 {
     public static class PresetHelper
     {
-        public static string XXL3Path = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/SkaterXL/XXLMod3/";
+        public static string XXL3Path = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/SkaterXL/XXLModCV/";
         public static string GrindPresetsPath = XXL3Path + "GrindPresets/";
         public static string LegPresetsPath = XXL3Path + "LegPresets/";
         public static string StancePresetsPath = XXL3Path + "StancePresets/";

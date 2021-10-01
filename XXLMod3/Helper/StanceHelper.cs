@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace XXLMod3.Helper
+namespace XXLModCV.Helper
 {
     class StanceHelper
     {

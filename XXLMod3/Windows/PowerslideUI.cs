@@ -1,9 +1,9 @@
 ﻿using GameManagement;
 using RapidGUI;
 using UnityEngine;
-using XXLMod3.Controller;
+using XXLModCV.Controller;
 
-namespace XXLMod3.Windows
+namespace XXLModCV.Windows
 {
     public static class PowerslideUI
     {

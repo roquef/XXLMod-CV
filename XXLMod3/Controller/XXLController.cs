@@ -7,9 +7,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.HighDefinition;
-using XXLMod3.Core;
+using XXLModCV.Core;
 
-namespace XXLMod3.Controller
+namespace XXLModCV.Controller
 {
     public class XXLController : MonoBehaviour
     {

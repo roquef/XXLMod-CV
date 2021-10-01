@@ -1,9 +1,9 @@
 ﻿using System;
 using HarmonyLib;
 using UnityEngine;
-using XXLMod3.Controller;
+using XXLModCV.Controller;
 
-namespace XXLMod3.Patches.BoardController_
+namespace XXLModCV.Patches.BoardController_
 {
     [HarmonyPatch(typeof(BoardController), "Rotate", new Type[] { typeof(bool), typeof(bool) })]
     class RotatePatch

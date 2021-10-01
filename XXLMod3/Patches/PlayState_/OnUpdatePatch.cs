@@ -2,7 +2,7 @@
 using HarmonyLib;
 using UnityEngine;
 
-namespace XXLMod3.Patches.PlayState_
+namespace XXLModCV.Patches.PlayState_
 {
     [HarmonyPatch(typeof(PlayState), "OnUpdate")]
     class OnUpdatePatch

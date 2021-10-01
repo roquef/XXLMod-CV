@@ -1,8 +1,8 @@
 ﻿using RapidGUI;
 using UnityEngine;
-using XXLMod3.Controller;
+using XXLModCV.Controller;
 
-namespace XXLMod3.Windows
+namespace XXLModCV.Windows
 {
     public static class MiscSettings
     {
@@ -58,6 +58,13 @@ namespace XXLMod3.Windows
             }
             Main.settings.HippieForce = RGUI.SliderFloat(Main.settings.HippieForce, 1f, 100f, 1f, "Hippie Jump Force");
             Main.settings.HippieTime = RGUI.SliderFloat(Main.settings.HippieTime, 0f, 10f, 0.3f, "Hippie Jump Animation Time");
+            GUILayout.EndVertical();
+
+            GUILayout.BeginVertical("Box");
+            if (RGUI.Button(Main.settings.KickSkate, "Kick Skate in air (B)"))
+            {
+                Main.settings.KickSkate = !Main.settings.KickSkate;
+            }
             GUILayout.EndVertical();
 
             GUILayout.BeginVertical("Box");

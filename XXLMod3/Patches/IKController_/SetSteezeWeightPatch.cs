@@ -1,9 +1,9 @@
 ﻿using HarmonyLib;
 using UnityEngine;
-using XXLMod3.Controller;
-using XXLMod3.Core;
+using XXLModCV.Controller;
+using XXLModCV.Core;
 
-namespace XXLMod3.Patches.IKController_
+namespace XXLModCV.Patches.IKController_
 {
     [HarmonyPatch(typeof(IKController), "SetSteezeWeight")]
     class SetSteezeWeightPatch

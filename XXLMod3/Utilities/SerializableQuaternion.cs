@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace XXLMod3
+namespace XXLModCV
 {
     [Serializable]
     public struct SerializableQuaternion

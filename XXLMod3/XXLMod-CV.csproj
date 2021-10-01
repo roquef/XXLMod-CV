@@ -7,8 +7,8 @@
     <ProjectGuid>{7DEB54F3-A9F2-4B91-9CE3-9DE7040E1A28}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XXLMod3</RootNamespace>
-    <AssemblyName>XXLMod3</AssemblyName>
+    <RootNamespace>XXLModCV</RootNamespace>
+    <AssemblyName>XXLMod-CV</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -30,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -306,15 +307,17 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if "$(ConfigurationName)"=="Debug" (
-copy /Y "$(TargetDir)XXLMod3.dll" "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod3\XXLMod3.dll"
-copy /Y "$(ProjectDir)Info.json" "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod3\Info.json"
-)
+    <PostBuildEvent>
+      if "$(ConfigurationName)"=="Debug" (
+        copy /Y "$(TargetDir)XXLMod-CV.dll" "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod-CV\XXLMod-CV.dll"
+        copy /Y "$(ProjectDir)Info.json" "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod-CV\Info.json"
+      )
 
-if "$(ConfigurationName)"=="Release" (
-del /Q /F "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod3\"
-copy /Y "$(TargetDir)XXLMod3.dll" "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod3\XXLMod3.dll"
-copy /Y "$(ProjectDir)Info.json" "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod3\Info.json"
-)</PostBuildEvent>
+      if "$(ConfigurationName)"=="Release" (
+        del /Q /F "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod-CV\"
+        copy /Y "$(TargetDir)XXLMod-CV.dll" "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod-CV\XXLMod-CV.dll"
+        copy /Y "$(ProjectDir)Info.json" "T:\SteamLibrary\steamapps\common\Skater XL\Mods\XXLMod-CV\Info.json"
+      )
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

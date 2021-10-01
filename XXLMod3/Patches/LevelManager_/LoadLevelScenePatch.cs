@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace XXLMod3.Patches.LevelManager_
+namespace XXLModCV.Patches.LevelManager_
 {
     //Code & permission by Mcbtay
     public class LevelManagerPatch

@@ -1,9 +1,9 @@
 ﻿using FSMHelper;
 using System.Collections.Generic;
 using UnityEngine;
-using XXLMod3.Controller;
+using XXLModCV.Controller;
 
-namespace XXLMod3.PlayerStates
+namespace XXLModCV.PlayerStates
 {
     public class Custom_Primo : PlayerState_OnBoard
     {

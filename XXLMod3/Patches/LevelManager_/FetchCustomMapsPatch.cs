@@ -3,9 +3,9 @@
 //using System.IO;
 //using System.Linq;
 //using UnityEngine;
-//using XXLMod3.Core;
+//using XXLModCV.Core;
 
-//namespace XXLMod3.Patches.LevelManager_
+//namespace XXLModCV.Patches.LevelManager_
 //{
 //    [HarmonyPatch(typeof(LevelManager), "FetchCustomMaps")]
 //    class FetchCustomMapsPatch

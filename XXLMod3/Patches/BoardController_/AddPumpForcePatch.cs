@@ -1,9 +1,9 @@
 ﻿using HarmonyLib;
 using System;
 using UnityEngine;
-using XXLMod3.Controller;
+using XXLModCV.Controller;
 
-namespace XXLMod3.Patches.BoardController_
+namespace XXLModCV.Patches.BoardController_
 {
     [HarmonyPatch(typeof(PlayerController), "AddPumpForce", new Type[] { typeof(float) })]
     class AddPumpForcePatch

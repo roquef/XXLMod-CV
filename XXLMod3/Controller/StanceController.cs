@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
-using XXLMod3.Core;
-using XXLMod3.Windows;
+using XXLModCV.Core;
+using XXLModCV.Windows;
 
-namespace XXLMod3.Controller
+namespace XXLModCV.Controller
 {
     public class StanceController : MonoBehaviour
     {

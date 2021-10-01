@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using XXLMod3.Core;
-using XXLMod3.Windows;
+using XXLModCV.Core;
+using XXLModCV.Windows;
 
-namespace XXLMod3.Controller
+namespace XXLModCV.Controller
 {
     public class UIController : MonoBehaviour
     {
@@ -22,7 +22,7 @@ namespace XXLMod3.Controller
         private void Start()
         {
             MainMenuRect = new Rect(24f, 24f, 100f, 200f);
-            TabMenuRect = new Rect(124f, 24f, 100f, 200f);
+            TabMenuRect = new Rect(224f, 24f, 100f, 200f);
         }
 
         private void Update()

@@ -3,9 +3,9 @@ using Photon.Pun;
 using RapidGUI;
 using System.Collections.Generic;
 using UnityEngine;
-using XXLMod3.Controller;
+using XXLModCV.Controller;
 
-namespace XXLMod3.Windows
+namespace XXLModCV.Windows
 {
     public static class MultiplayerUI
     {

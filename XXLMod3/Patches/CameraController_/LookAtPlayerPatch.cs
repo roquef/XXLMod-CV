@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using UnityEngine;
 
-namespace XXLMod3.Patches.CameraController_
+namespace XXLModCV.Patches.CameraController_
 {
     [HarmonyPatch(typeof(CameraController), "LookAtPlayer")]
     class LookAtPlayerPatch

@@ -1,6 +1,6 @@
 ﻿using UnityModManagerNet;
 
-namespace XXLMod3
+namespace XXLModCV
 {
     public class Logger
     {

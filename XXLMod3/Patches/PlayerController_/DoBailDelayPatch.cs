@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace XXLMod3.Patches.PlayerController_
+namespace XXLModCV.Patches.PlayerController_
 {
     [HarmonyPatch(typeof(PlayerController), "DoBailDelay")]
 

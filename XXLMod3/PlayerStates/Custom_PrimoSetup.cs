@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using XXLMod3.Controller;
-using XXLMod3.Core;
+using XXLModCV.Controller;
+using XXLModCV.Core;
 
-namespace XXLMod3.PlayerStates
+namespace XXLModCV.PlayerStates
 {
     public class Custom_PrimoSetup : PlayerState_OnBoard
     {

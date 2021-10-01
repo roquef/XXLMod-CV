@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace XXLMod3.Core
+namespace XXLModCV.Core
 {
     [Serializable]
     public class SaveStance

@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using ReplayEditor;
 
-namespace XXLMod3.Patches.ReplayEditorController_
+namespace XXLModCV.Patches.ReplayEditorController_
 {
     [HarmonyPatch(typeof(ReplayEditorController), "OnEnable")]
     class OnEnablePrefixPatch

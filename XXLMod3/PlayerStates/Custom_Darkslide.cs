@@ -2,10 +2,10 @@
 using SkaterXL.Core;
 using SkaterXL.TrickDetection;
 using UnityEngine;
-using XXLMod3.Core;
-using XXLMod3.Controller;
+using XXLModCV.Core;
+using XXLModCV.Controller;
 
-namespace XXLMod3.PlayerStates
+namespace XXLModCV.PlayerStates
 {
     public class Custom_Darkslide : PlayerState_OnBoard
     {

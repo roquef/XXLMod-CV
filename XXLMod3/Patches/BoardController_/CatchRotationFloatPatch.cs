@@ -2,7 +2,7 @@
 //using System;
 //using UnityEngine;
 
-//namespace XXLMod3.Patches.BoardController_
+//namespace XXLModCV.Patches.BoardController_
 //{
 //    [HarmonyPatch(typeof(BoardController), "CatchRotation", new Type[] { typeof(float) })]
 //    class CatchRotationFloatPatch

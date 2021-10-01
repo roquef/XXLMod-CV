@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace XXLMod3.Patches.TriggerManager_
+namespace XXLModCV.Patches.TriggerManager_
 {
     [HarmonyPatch(typeof(TriggerManager), "GrindTriggerCheck")]
     class GrindTriggerCheckPatch

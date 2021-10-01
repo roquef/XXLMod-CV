@@ -2,9 +2,9 @@
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
-using XXLMod3.PlayerStates;
+using XXLModCV.PlayerStates;
 
-namespace XXLMod3.Patches.PlayerStateMachine_
+namespace XXLModCV.Patches.PlayerStateMachine_
 {
     [HarmonyPatch(typeof(PlayerStateMachine), "SetupDefinition")]
     class SetupDefinitionPatch

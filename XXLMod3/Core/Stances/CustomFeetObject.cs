@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace XXLMod3.Core
+namespace XXLModCV.Core
 {
     public class CustomFeetObject : BaseFeetObject
     {

@@ -1,7 +1,7 @@
 ﻿//using HarmonyLib;
 //using UnityEngine;
 
-//namespace XXLMod3.Patches.BoardController_
+//namespace XXLModCV.Patches.BoardController_
 //{
 //    [HarmonyPatch(typeof(BoardController), "SetBoardControllerUpVector")]
 //    class SetBoardControllerUpVectorPatch

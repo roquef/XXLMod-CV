@@ -1,9 +1,9 @@
 ﻿using HarmonyLib;
 using SkaterXL.Core;
 using UnityEngine;
-using XXLMod3.Controller;
+using XXLModCV.Controller;
 
-namespace XXLMod3.Patches.IKController_
+namespace XXLModCV.Patches.IKController_
 {
     [HarmonyPatch(typeof(IKController), "PrepIK")]
     class PrepIKPatch

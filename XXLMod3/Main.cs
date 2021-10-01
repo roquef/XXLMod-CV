@@ -3,9 +3,9 @@ using System;
 using System.Reflection;
 using UnityEngine;
 using UnityModManagerNet;
-using XXLMod3.Controller;
+using XXLModCV.Controller;
 
-namespace XXLMod3
+namespace XXLModCV
 {
     public static class Main
     {

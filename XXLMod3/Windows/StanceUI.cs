@@ -4,10 +4,10 @@ using RapidGUI;
 using System;
 using System.IO;
 using UnityEngine;
-using XXLMod3.Controller;
-using XXLMod3.Core;
+using XXLModCV.Controller;
+using XXLModCV.Core;
 
-namespace XXLMod3.Windows
+namespace XXLModCV.Windows
 {
     public static class StanceUI
     {

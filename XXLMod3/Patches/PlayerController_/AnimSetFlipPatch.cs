@@ -1,9 +1,9 @@
 ﻿using HarmonyLib;
 using System;
 using UnityEngine;
-using XXLMod3.Controller;
+using XXLModCV.Controller;
 
-namespace XXLMod3.Patches.PlayerController_
+namespace XXLModCV.Patches.PlayerController_
 {
     [HarmonyPatch(typeof(PlayerController), "AnimSetFlip", new Type[] { typeof(float) })]
     class AnimSetFlipPatch

@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 using UnityModManagerNet;
-using XXLMod3.Core;
+using XXLModCV.Core;
 
-namespace XXLMod3
+namespace XXLModCV
 {
     [Serializable]
     public class Settings : UnityModManager.ModSettings, IDrawable
@@ -189,6 +189,7 @@ namespace XXLMod3
         public float PushCrouchAmount = 1.04196f;
         public float HippieForce = 1f;
         public float HippieTime = 0.3f;
+        public bool KickSkate = false;
         public bool RandomImpactAnimations = true;
         public bool ReducedStickTurning = false;
         public bool ShuvMidFlip = true;

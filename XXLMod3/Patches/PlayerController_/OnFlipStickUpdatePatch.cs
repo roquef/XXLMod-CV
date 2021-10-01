@@ -1,9 +1,9 @@
 ﻿using HarmonyLib;
 using UnityEngine;
-using XXLMod3.Controller;
-using XXLMod3.Core;
+using XXLModCV.Controller;
+using XXLModCV.Core;
 
-namespace XXLMod3.Patches.PlayerController_
+namespace XXLModCV.Patches.PlayerController_
 {
     [HarmonyPatch(typeof(PlayerController), nameof(PlayerController.OnFlipStickUpdate))]
     class OnFlipStickUpdatePatch

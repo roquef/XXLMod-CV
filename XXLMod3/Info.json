@@ -1,11 +1,11 @@
 ﻿{
-    "Id": "XXLMod3",
-    "DisplayName": "XXLMod3 for SXL 1.2.3.5",
-    "Author": "DawgVinci",
-    "Version": "1.2.0h",
-    "ManagerVersion": "0.22.5.0",
-    "AssemblyName": "XXLMod3.dll",
-    "EntryMethod": "XXLMod3.Main.Load",
-    "HomePage": "https://mod.io/members/dawgvinci",
-    "Repository": ""
+  "Id": "XXLMod-CV",
+  "DisplayName": "XXLMod-CV",
+  "Author": "Original XXLMod3 by DawgVinci",
+  "Version": "1.0.0-dev",
+  "ManagerVersion": "0.22.5.0",
+  "AssemblyName": "XXLMod-CV.dll",
+  "EntryMethod": "XXLModCV.Main.Load",
+  "HomePage": "https://github.com/roquef/XXLMod-CV/releases",
+  "Repository": "https://github.com/roquef/XXLMod-CV"
 }
