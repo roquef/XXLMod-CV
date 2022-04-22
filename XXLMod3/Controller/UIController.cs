@@ -98,7 +98,7 @@ namespace XXLModCV.Controller
                 switch (MenuTab)
                 {
                     case MenuTab.General:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position,new Vector2(444f, 664f)), GeneralSettings.Window, "<b>General settings</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position,new Vector2(444f, 754f)), GeneralSettings.Window, "<b>General settings</b>");
                         break;
                     case MenuTab.Catch:
                         TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 271f)), CatchUI.Window, "<b>Catch settings</b>");

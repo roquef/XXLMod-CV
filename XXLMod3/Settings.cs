@@ -37,6 +37,9 @@ namespace XXLModCV
         public float RevertSpeed = 1f;
         public float TopSpeed = 9f;
         public DecoupledMode DecoupledMode = DecoupledMode.Off;
+        public float PivotMaxVelocity = .5f;
+        public float PivotMaxAngle = .05f;
+        public bool BetterDecay = false;
         #endregion
 
         #region CatchSettings

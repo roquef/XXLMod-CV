@@ -78,6 +78,18 @@ namespace XXLModCV.Windows
             Main.settings.TopSpeed = RGUI.SliderFloat(Main.settings.TopSpeed, 0.1f, 16f, 8f, "Top Speed");
             GUILayout.EndVertical();
 
+            GUILayout.BeginVertical("Box");
+            if (RGUI.Button(Main.settings.BetterDecay, "Better velocity decay"))
+            {
+                Main.settings.BetterDecay = !Main.settings.BetterDecay;
+            }
+            GUILayout.EndVertical();
+
+            GUILayout.BeginVertical("Box");
+            Main.settings.PivotMaxVelocity = RGUI.SliderFloat(Main.settings.PivotMaxVelocity, 0.01f, 10f, .5f, "Max pivot speed");
+            Main.settings.PivotMaxAngle = RGUI.SliderFloat(Main.settings.PivotMaxAngle, 0.01f, 1.25f, .05f, "Max pivot manual angle");            
+            GUILayout.EndVertical();
+
             GUILayout.BeginHorizontal("Box");
             StatsPresetName = GUILayout.TextField(StatsPresetName, GUILayout.Height(21f));
             if (GUILayout.Button("<b>Save Stats</b>", GUILayout.Height(21f), GUILayout.ExpandWidth(false)))

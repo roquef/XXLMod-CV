@@ -262,6 +262,7 @@ namespace XXLModCV.PlayerStates
             }
             PlayerController.Instance.ScalePlayerCollider();
             PlayerController.Instance.ApplyFriction();
+            if(Main.settings.BetterDecay) PlayerController.Instance.boardController.ApplyFrictionTowardsVelocity(.9965f);
             PlayerController.Instance.boardController.SetBoardControllerUpVector(PlayerController.Instance.skaterController.skaterTransform.up);
             PlayerController.Instance.SetRotationTarget();
             PlayerController.Instance.LimitAngularVelocity(5f);
@@ -575,7 +576,7 @@ namespace XXLModCV.PlayerStates
             _centerOfMassChanged = false;
         }
 
-        public Quaternion GetManualTarget(bool p_manual, float p_manualAxis, float p_secondaryAxis, float p_swivel)
+        public Quaternion GetManualTarget(bool p_manual, float p_manualAxis, float p_secondaryAxis)
         {
             float num = (Mathf.Abs(p_manualAxis) - 0.5f) * 10f + p_secondaryAxis * 5f;
             Vector3 vector = (!PlayerController.Instance.boardController.IsBoardBackwards) ? PlayerController.Instance.boardController.boardTransform.forward : (-PlayerController.Instance.boardController.boardTransform.forward);
@@ -623,13 +624,13 @@ namespace XXLModCV.PlayerStates
             _leftTriggerValue = value;
             if (!_lockTurningFromPowerslide)
             {
-                if (PlayerController.Instance.boardController.boardRigidbody.velocity.magnitude < 0.5f && !_powerslideActionAttempt)
+                if (PlayerController.Instance.boardController.boardRigidbody.velocity.magnitude < Main.settings.PivotMaxVelocity && !_powerslideActionAttempt)
                 {
                     if (!_centerOfMassChanged)
                     {
                         SetCenterOfMass();
                     }
-                    PlayerController.Instance.ManualRotation(GetManualTarget(!_switchPivot, 0.05f, 0.05f, 0f));
+                    PlayerController.Instance.ManualRotation(GetManualTarget(!_switchPivot, Main.settings.PivotMaxAngle, Main.settings.PivotMaxAngle));
                 }
                 else if (_centerOfMassChanged)
                 {
@@ -646,13 +647,13 @@ namespace XXLModCV.PlayerStates
             _rightTriggerValue = value;
             if (!_lockTurningFromPowerslide)
             {
-                if (PlayerController.Instance.boardController.boardRigidbody.velocity.magnitude < 0.5f && !_powerslideActionAttempt)
+                if (PlayerController.Instance.boardController.boardRigidbody.velocity.magnitude < Main.settings.PivotMaxVelocity && !_powerslideActionAttempt)
                 {
                     if (!_centerOfMassChanged)
                     {
                         SetCenterOfMass();
                     }
-                    PlayerController.Instance.ManualRotation(GetManualTarget(!_switchPivot, 0.05f, 0.05f, 0f));
+                    PlayerController.Instance.ManualRotation(GetManualTarget(!_switchPivot, Main.settings.PivotMaxAngle, Main.settings.PivotMaxAngle));
                 }
                 else if (_centerOfMassChanged)
                 {
