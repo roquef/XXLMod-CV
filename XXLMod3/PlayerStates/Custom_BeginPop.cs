@@ -262,8 +262,8 @@ namespace XXLModCV.PlayerStates
             PlayerController.Instance.skaterController.leftFootCollider.isTrigger = true;
             EventManager.Instance.EnterAir(popType, _popForce);
             PlayerController.Instance.respawn.behaviourPuppet.BoostImmunity(1000f);
-            PlayerController.Instance.CrossFadeAnimation("Pop", 0.04f);
-            PlayerController.Instance.ScaleDisplacementCurve(Vector3.ProjectOnPlane(PlayerController.Instance.skaterController.skaterTransform.position - PlayerController.Instance.boardController.boardTransform.position, PlayerController.Instance.skaterController.skaterTransform.forward).magnitude);
+            PlayerController.Instance.CrossFadeAnimation("Pop", 0.07f);
+            PlayerController.Instance.ScaleDisplacementCurve(Vector3.ProjectOnPlane(PlayerController.Instance.skaterController.skaterTransform.position - PlayerController.Instance.boardController.boardTransform.position, PlayerController.Instance.skaterController.skaterTransform.forward).magnitude * 1.25f);
             PlayerController.Instance.boardController.ResetTweakValues();
             PlayerController.Instance.boardController.CacheBoardUp();
             PlayerController.Instance.boardController.UpdateReferenceBoardTargetRotation();

@@ -7,6 +7,7 @@ using XXLModCV.Controller;
 
 namespace XXLModCV
 {
+    [EnableReloading]
     public static class Main
     {
         public static Harmony harmonyInstance;
@@ -21,6 +22,7 @@ namespace XXLModCV
 
         private static bool Load(UnityModManager.ModEntry modEntry)
         {
+            modEntry.OnUnload = Unload;
             settings = UnityModManager.ModSettings.Load<Settings>(modEntry);
             modEntry.OnGUI = OnGUI;
             modEntry.OnSaveGUI = new Action<UnityModManager.ModEntry>(OnSaveGUI);
@@ -74,6 +76,15 @@ namespace XXLModCV
                 UnityEngine.Object.Destroy(uiController);
                 UnityEngine.Object.Destroy(xxlController);
             }
+            return true;
+        }
+
+        static bool Unload(UnityModManager.ModEntry modEntry)
+        {
+            harmonyInstance.UnpatchAll(harmonyInstance.Id);
+            UnityEngine.Object.Destroy(stanceController);
+            UnityEngine.Object.Destroy(uiController);
+            UnityEngine.Object.Destroy(xxlController);
             return true;
         }
     }

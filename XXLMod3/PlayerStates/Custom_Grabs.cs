@@ -130,14 +130,17 @@ namespace XXLModCV.PlayerStates
             }
             if (grab == GrabSide.Left)
             {
-                leftIk = Mathf.MoveTowards(leftIk, 1f, Time.deltaTime * 3f);
+                leftIk = Mathf.MoveTowards(leftIk, Main.settings.GrabBoardBoned_speed / 1.25f, Time.deltaTime * Main.settings.GrabBoardBoned_speed);
             }
             else
             {
-                rightIk = Mathf.MoveTowards(rightIk, 1f, Time.deltaTime * 3f);
+                rightIk = Mathf.MoveTowards(rightIk, Main.settings.GrabBoardBoned_speed / 1.25f, Time.deltaTime * Main.settings.GrabBoardBoned_speed);
             }
             PlayerController.Instance.SetHandIKWeight((grab == Custom_Grabs.GrabSide.Left) ? leftIk : 0f, (grab == Custom_Grabs.GrabSide.Right) ? rightIk : 0f);
             DoStance();
+
+            PlayerController.Instance.boardController.boardControlTransform.position = PlayerController.Instance.skaterController.skaterTargetTransform.position + new Vector3(0f, 0f, 0f);
+            PlayerController.Instance.boardController.boardControlTransform.localPosition = Vector3.Lerp(PlayerController.Instance.boardController.boardControlTransform.localPosition, PlayerController.Instance.boardController.boardControlTransform.localPosition + new Vector3(Main.settings.GrabBoardBoned_x, Main.settings.GrabBoardBoned_y, Main.settings.GrabBoardBoned_z), Time.deltaTime * Main.settings.GrabBoardBoned_speed);
         }
 
         public override void FixedUpdate()

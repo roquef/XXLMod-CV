@@ -29,11 +29,11 @@ namespace XXLModCV.Windows
                 GUILayout.BeginHorizontal("Box");
                 GUILayout.Label($"<b>Current Lobby: {PhotonNetwork.CurrentRoom.Name}</b>");
                 GUILayout.Label($"<b>Ping: {PhotonNetwork.GetPing()}</b>");
-                if (GUILayout.Button("<b>SPECTATE</b>", GUILayout.Height(21f)))
+                /*if (GUILayout.Button("<b>SPECTATE</b>", GUILayout.Height(21f)))
                 {
                     GameStateMachine.Instance.RequestTransitionTo(typeof(SpectatorState), false, null);
                     showMenu = !showMenu;
-                }
+                }*/
                 GUILayout.EndHorizontal();
                 foreach (KeyValuePair<int, NetworkPlayerController> player in MultiplayerManager.Instance.networkPlayers)
                 {

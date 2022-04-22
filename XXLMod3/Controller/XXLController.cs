@@ -58,7 +58,14 @@ namespace XXLModCV.Controller
 
         public FullBodyBipedIK bipedIK;
 
-        private void Awake() => Instance = this;
+        public float time = 0f;
+
+        private GameObject leftFootCollider;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void Start()
         {
@@ -67,6 +74,12 @@ namespace XXLModCV.Controller
             LeftFoot = PlayerController.Instance.animationController.skaterAnim.GetBoneTransform(HumanBodyBones.LeftFoot);
             RightFoot = PlayerController.Instance.animationController.skaterAnim.GetBoneTransform(HumanBodyBones.RightFoot);
             bipedIK = PlayerController.Instance.skaterController.finalIk;
+            /*leftFootCollider = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            leftFootCollider.GetComponent<MeshRenderer>().material.shader = Shader.Find("HDRP/Lit");
+            leftFootCollider.GetComponent<Collider>().enabled = false;
+
+            leftFootCollider.transform.localScale = PlayerController.Instance.skaterController.leftFootCollider.bounds.size;
+            leftFootCollider.gameObject.AddComponent<ObjectTracker>();*/
 
             GrindSettingObjects = new List<BaseGrindSettings>()
             {
@@ -99,11 +112,81 @@ namespace XXLModCV.Controller
             RagdollAudioSources = SoundManager.Instance.ragdollSounds.GetAllSources();
         }
 
+        public void AddObjectTrackers()
+        {
+            Logger.Log("Checking Hinges and RigidBodies for replay tracking...");
+            string[] internals = { "Gameplay Camera", "NewIKAnim", "NewSteezeIK", "NewSkater", "Pin", "Camera Rig", "CenterOfMassPlayer", "Lean Proxy", "Coping Detection", "Skater Target", "Front Truck", "Back Truck", "Skateboard", "Slater_foot_r", "Slater_Leg_r", "Slater_UpLeg_r", "Slater_foot_l", "Slater_Leg_l", "Slater_UpLeg_l", "Skater_hand_r", "Skater_ForeArm_r", "Skater_Arm_r", "Skater_hand_l", "Skater_ForeArm_l", "Skater_Arm_l", "Skater_Head", "Skater_Spine2", "Skater_Spine", "Skater_pelvis", "Skater_foot_r", "Skater_Leg_r", "Skater_UpLeg_r", "Skater_foot_l", "Skater_Leg_l", "Skater_UpLeg_l" };
+            var animators = UnityEngine.Object.FindObjectsOfType<UnityEngine.Animator>();
+
+            for (int i = 0; i < animators.Length; i++)
+            {
+                UnityEngine.Animator go = animators[i];
+                bool add = true;
+                for (int n = 0; n < internals.Length; n++)
+                {
+                    if (go.name == internals[n]) add = false;
+                }
+
+                ObjectTracker ot = go.GetComponent<ObjectTracker>();
+
+                if (add && ot == null)
+                {
+                    go.gameObject.AddComponent<ObjectTracker>();
+                    Logger.Log($"Added ObjectTracker @ {go.gameObject.name}");
+                }
+            }
+
+            var hinges = UnityEngine.Object.FindObjectsOfType<UnityEngine.HingeJoint>();
+            for (int i = 0; i < hinges.Length; i++)
+            {
+                UnityEngine.HingeJoint go = hinges[i];
+                bool add = true;
+                for (int n = 0; n < internals.Length; n++)
+                {
+                    if (go.name == internals[n]) add = false;
+                }
+
+                ObjectTracker ot = go.GetComponent<ObjectTracker>();
+
+                if (add && ot == null)
+                {
+                    go.gameObject.AddComponent<ObjectTracker>();
+                    Logger.Log($"Added ObjectTracker @ {go.gameObject.name}");
+                }
+            }
+
+            var rbs = UnityEngine.Object.FindObjectsOfType<UnityEngine.Rigidbody>();
+            for (int i = 0; i < rbs.Length; i++)
+            {
+                UnityEngine.Rigidbody go = rbs[i];
+                bool add = true;
+                for (int n = 0; n < internals.Length; n++)
+                {
+                    if (go.name == internals[n]) add = false;
+                }
+
+                ObjectTracker ot = go.GetComponent<ObjectTracker>();
+
+                if (add && ot == null)
+                {
+                    go.gameObject.AddComponent<ObjectTracker>();
+                    Logger.Log($"Added ObjectTracker @ {go.gameObject.name}");
+                }
+            }
+        }
+
         private IEnumerator Initialize()
         {
             yield return new WaitWhile(() => !PlayerController.Instance.inputController.controlsActive);
-
             InjectCustomPlayerStates();
+            AddObjectTrackers();
+
+            GameObject[] allObjects = UnityEngine.GameObject.FindObjectsOfType<GameObject>();
+            foreach (GameObject go in allObjects) {
+                Logger.Log(go.tag);
+                Logger.Log(go.layer.ToString());
+                Logger.Log(" ");
+            }                
         }
 
         private void InjectCustomPlayerStates()
@@ -114,6 +197,9 @@ namespace XXLModCV.Controller
 
         private void Update()
         {
+            /*leftFootCollider.transform.position = PlayerController.Instance.skaterController.leftFootCollider.bounds.center;
+            leftFootCollider.transform.rotation = PlayerController.Instance.skaterController.leftFootCollider.transform.rotation;*/
+
             if (CurrentState == CurrentState.Pop || CurrentState == CurrentState.InAir || CurrentState == CurrentState.Released)
             {
                 InputController.Instance.TriggerMultiplier = Main.settings.InAirTurnSpeed;
@@ -121,14 +207,14 @@ namespace XXLModCV.Controller
 
             if (Input.GetKeyDown(KeyCode.N))
             {
-                //GameObject gameObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                //gameObject.AddComponent<BoxCollider>();
-                //Rigidbody rb = gameObject.AddComponent<Rigidbody>();
-                //rb.interpolation = RigidbodyInterpolation.Interpolate;
-                //gameObject.AddComponent<ObjectTracker>();
-                //gameObject.GetComponent<MeshRenderer>().material.shader = Shader.Find("HDRP/Lit");
-                //gameObject.transform.position = PlayerController.Instance.skaterController.skaterTargetTransform.position + PlayerController.Instance.skaterController.skaterTransform.forward * 3f + PlayerController.Instance.skaterController.skaterTargetTransform.up * 1f;
-                //gameObject.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+                GameObject gameObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                gameObject.AddComponent<BoxCollider>();
+                Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+                rb.interpolation = RigidbodyInterpolation.Interpolate;
+                gameObject.AddComponent<ObjectTracker>();
+                gameObject.GetComponent<MeshRenderer>().material.shader = Shader.Find("HDRP/Lit");
+                gameObject.transform.position = PlayerController.Instance.skaterController.skaterTargetTransform.position + PlayerController.Instance.skaterController.skaterTransform.forward * 3f + PlayerController.Instance.skaterController.skaterTargetTransform.up * 1f;
+                gameObject.transform.localScale = new Vector3(3f, 0.4f, 0.4f);
             }
 
             if (FlipDetected && Main.settings.SlowMotionFlips)
@@ -302,7 +388,7 @@ namespace XXLModCV.Controller
 
         private void FixedUpdate()
         {
-            if(CurrentState == CurrentState.Grabs)
+            if (CurrentState == CurrentState.Grabs)
             {
                 switch (Main.settings.BodyflipMode)
                 {
@@ -361,7 +447,9 @@ namespace XXLModCV.Controller
             if (GameStateMachine.Instance.CurrentState.GetType() == typeof(ReplayState))
             {
                 Traverse.Create(ReplayEditorController.Instance).Field("playbackSpeed").SetValue(Main.settings.ReplayPlaybackSpeed);
+                // ReplayEditorController.Instance.cameraController.SetCameraMode(CameraMode.Free);
             }
+
         }
 
         public void ResetFlips()
@@ -371,11 +459,11 @@ namespace XXLModCV.Controller
             IsPrimoFlip = false;
         }
 
-        public void SetMuscleWeight()
+        public void SetMuscleWeight(float multiplier = 0f)
         {
-            PlayerController.Instance.respawn.puppetMaster.muscleWeight = 0f;
-            PlayerController.Instance.respawn.puppetMaster.muscleSpring = 0f;
-            PlayerController.Instance.respawn.puppetMaster.muscleDamper = 0f;
+            PlayerController.Instance.respawn.puppetMaster.muscleWeight = 1f * multiplier;
+            PlayerController.Instance.respawn.puppetMaster.muscleSpring = 200f * multiplier;
+            PlayerController.Instance.respawn.puppetMaster.muscleDamper = 100f * multiplier;
         }
 
         public void ResetMuscleWeight()

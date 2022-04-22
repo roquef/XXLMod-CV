@@ -87,6 +87,9 @@ namespace XXLModCV.PlayerStates
         private Vector3 _cachedForward;
         private Vector3 _cachedRight;
 
+        AnimationCurve Curve = AnimationCurve.EaseInOut(0, 1, 1, 0);
+        Camera camera = (Camera)UnityEngine.Object.FindObjectOfType(typeof(Camera));
+
         public override void SetupDefinition(ref FSMStateType stateType, ref List<Type> children)
         {
             stateType = FSMStateType.Type_OR;
@@ -282,6 +285,19 @@ namespace XXLModCV.PlayerStates
                 _firstFrame = false;
             }
             _colliding = false;
+
+            // Shake();
+        }
+
+        private void Shake()
+        {
+            float Speed = 10f;
+            float time = Time.deltaTime;
+            Transform transform = PlayerController.Instance.skaterController.transform;
+            Vector3 Amount = PlayerController.Instance.boardController.boardRigidbody.velocity;
+            Vector3 nextPos = (Mathf.PerlinNoise(time * Speed, time * Speed * 2) - 0.5f) * Amount.x * transform.right * Curve.Evaluate(1f - time) +
+                              (Mathf.PerlinNoise(time * Speed * 2, time * Speed) - 0.5f) * Amount.y * transform.up * Curve.Evaluate(1f - time);
+            camera.transform.position = nextPos;
         }
 
         private void Timers()

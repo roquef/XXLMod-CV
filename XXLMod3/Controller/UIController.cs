@@ -110,7 +110,7 @@ namespace XXLModCV.Controller
                         TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 294f)), LateFlipSettings.Window, "<b>Late flips settings</b>");
                         break;
                     case MenuTab.Grabs:
-                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 266f)), GrabSettings.Window, "<b>Grabs settings</b>");
+                        TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 466f)), GrabSettings.Window, "<b>Grabs settings</b>");
                         break;
                     case MenuTab.Fingerflips:
                         TabMenuRect = GUI.Window(9001, new Rect(TabMenuRect.position, new Vector2(444f, 50f)), FingerFlipSettings.Window, "<b>Finger flips settings</b>");

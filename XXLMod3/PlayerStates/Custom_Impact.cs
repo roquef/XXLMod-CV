@@ -135,10 +135,16 @@ namespace XXLModCV.PlayerStates
 
         private string GetRandomAnimation(string[] strings)
         {
-            System.Random rand = new System.Random();
-            int index = rand.Next(strings.Length);
-            string randomString = ($"{strings[index]}");
-            return randomString;
+            System.Random chance = new System.Random();
+            if(chance.NextDouble() >= .5f) {
+                System.Random rand = new System.Random();
+                int index = rand.Next(strings.Length);
+                string randomString = ($"{strings[index]}");
+                return randomString;
+            }
+            else {
+                return "Impact";
+            }
         }
 
         public override void Exit()

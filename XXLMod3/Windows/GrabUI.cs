@@ -51,7 +51,22 @@ namespace XXLModCV.Windows
                     StanceUI.StanceTab = StanceTab.GrabsOnButton;
                 }
             }
-            GUILayout.EndVertical();           
+            GUILayout.EndVertical();
+
+            GUILayout.BeginVertical("Box");
+
+            if (RGUI.Button(Main.settings.BonedGrab, "Boned Grab"))
+            {
+                Main.settings.BonedGrab = !Main.settings.BonedGrab;
+            }
+            Main.settings.GrabBoardBoned_x = RGUI.SliderFloat(Main.settings.GrabBoardBoned_x, -2f, 2f, 0f, "Board Offset X");
+            Main.settings.GrabBoardBoned_y = RGUI.SliderFloat(Main.settings.GrabBoardBoned_y, -2f, 2f, 0f, "Board Offset Y");
+            Main.settings.GrabBoardBoned_z = RGUI.SliderFloat(Main.settings.GrabBoardBoned_z, -2f, 2f, 0f, "Board Offset Z");
+            GUILayout.EndVertical();
+
+            GUILayout.BeginVertical("Box");
+            Main.settings.GrabBoardBoned_speed = RGUI.SliderFloat(Main.settings.GrabBoardBoned_speed, .1f, 10f, 3f, "Grab Speed");
+            GUILayout.EndVertical();
         }
 
         private static void Title()

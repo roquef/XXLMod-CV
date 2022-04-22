@@ -82,7 +82,12 @@ namespace XXLModCV
         public BodyflipMode BodyflipMode = BodyflipMode.Off;
         public float BodyflipSpeed = 60f;
         public float GrabBoardOffset = 0f;
-        public bool GrabDelay = true;
+        public float GrabBoardBoned_x = 0f;
+        public float GrabBoardBoned_y = .1f;
+        public float GrabBoardBoned_z = 1f;
+        public float GrabBoardBoned_speed = 3f;
+        public bool BonedGrab = true;
+        public bool GrabDelay = false;
         public OneFootGrabMode OneFootGrabMode = OneFootGrabMode.Off;
         #endregion
 
